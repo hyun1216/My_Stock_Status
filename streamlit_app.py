@@ -1,3 +1,5 @@
+# My Stock Status
+
 import streamlit as st
 import yfinance as yf
 import pandas as pd
@@ -54,11 +56,11 @@ def color_negative_red(val):
     return f'color: {color}'
 
 # 엑셀 스타일 시트 적용
-styled_df = df.style.applymap(color_negative_red, subset=['등락률(%)']) \
+styled_df = df.style.map(color_negative_red, subset=['등락률(%)']) \
                    .format({
                        "현재가(USD)": "${:,.2f}",
                        "현재가(KRW)": "{:,.0f}원",
-                       "등락률(%)": "{:+.2/}"
+                       "등락률(%)": "{:+.2f}%" # 서식 오류도 살짝 수정했어!
                    })
 
 st.subheader("📈 실시간 보유 종목 현황")
