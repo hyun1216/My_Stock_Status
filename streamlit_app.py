@@ -133,7 +133,6 @@ if st.session_state.selected_stocks:
                             "등락률(%)": "{:+.2f}%"
                         })
         
-        # hide_index=True로 설정해서 앞에 뜨는 숫자(인덱스)를 가려주면 훨씬 엑셀 같아!
         st.dataframe(styled_df, use_container_width=True, hide_index=True)
         
         # 새로고침 버튼
@@ -142,4 +141,4 @@ if st.session_state.selected_stocks:
     else:
         st.error("데이터를 불러오는 데 실패했습니다.")
 else:
-    st.info("👆 위에서 종목을 검색해서 추가해줘! 추가하면 여기에 깔끔한 엑셀 표가 나타날 거야.")
+    st.info("👆 위에서 종목을 검색해서 추가해주세요")
